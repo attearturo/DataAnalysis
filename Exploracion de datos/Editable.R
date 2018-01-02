@@ -13,5 +13,5 @@ grafico
 
 //Diagrama de dispersion con Precio y Peso como ejes, facetas
 grafico <- ggplot(diamonds, aes(x=diamonds$carat, y=diamonds$price))
-grafico <- grafico + labs(x="Peso", y="Precio", title="Comercio de Diamantes") + facet_wrap(~ diamonds$color)+ geom_point(aes(color = diamonds$color, alpha = 0.5))
+grafico <- grafico + labs(x="Peso", y="Precio", title="Comercio de Diamantes") + facet_grid(~ diamonds$cut) + geom_point(aes(color = diamonds$color, alpha = 0.5))
 grafico
