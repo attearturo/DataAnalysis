@@ -5,6 +5,7 @@ library(ggplot2)
 library(knitr)
 
 str(diamonds)
+names(diamonds)
 
 #Diagrama de dispersion con Precio y Peso como ejes
 grafico <- ggplot(diamonds, aes(x=diamonds$carat, y=diamonds$price))
@@ -52,4 +53,10 @@ grafico
 
 grafico <- ggplot(diamonds, aes(price, fill = clarity, color = clarity))
 grafico <-grafico + geom_density(alpha = 0.1)
+grafico
+
+
+#Diagrama de dispersion para Precio / Tamaño
+grafico <- ggplot(diamonds, aes(x=diamonds$price, y=(diamonds$x * diamonds$y *diamonds$z)))
+grafico <- grafico + geom_point(aes(color=0, alpha = 0.5)) + labs(x='Precio', y='Tamaño', title='Comercio de diamantes')
 grafico
